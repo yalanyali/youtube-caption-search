@@ -14,9 +14,10 @@ const hideUI = () => {
 }
 
 const showUI = () => {
-  document.getElementById('inputContainer').style.display = 'block'
-  document.getElementById('listContainer').style.display = 'block'
-  document.getElementById('title').textContent = 'Search'
+  document.getElementById('inputContainer').style.display = 'flex'
+  document.getElementById('title').style.display = 'none'
+  // document.getElementById('listContainer').style.display = 'flex'
+  // document.getElementById('title').textContent = 'Search'
   document.getElementById('searchButton').addEventListener('click', onSearch)
 
   const languageList = document.getElementById('languageSelect')
@@ -42,6 +43,7 @@ const seekVideo = async (sec) => {
 const populateList = (lines) => {
   const listEl = document.getElementById('list')
   listEl.innerHTML = ''
+  document.getElementById('listContainer').style.display = 'flex'
   if (lines.length === 0) {
     const el = document.createElement('LI')
     el.textContent = 'No results found'
